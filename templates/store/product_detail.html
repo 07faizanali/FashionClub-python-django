@@ -31,30 +31,30 @@
 
 	<p>{{ single_product.description }}</p>
 
-<hr>
-	<div class="row">
-		<div class="item-option-select">
-			<h6>Choose Color</h6>
-			  <select name="color" class="form-control" required>
-				<option value="" disabled selected>Selected</option>
-				{% for i in single_product.variation_set.colors %}
-				<option value="{{ i.variation_value | lower }}">{{ i.variation_value | capfirst }}</option>
-				{% endfor %}
-			  </select>
-		</div>
-	</div> <!-- row.// -->
-	<div class="row">
-		<div class="item-option-select">
-			<h6>Select Size</h6>
-			  <select name="color" class="form-control">
-				<option value="" disabled selected>Selected</option>
-				{% for i in single_product.variation_set.sizes %}
-				<option value="{{ i.variation_value | lower }}">{{ i.variation_value | capfirst }}</option>
-				{% endfor %}
-			  </select>
-		</div>
-	</div> <!-- row.// -->
-	<hr>
+<!--<hr>-->
+<!--	<div class="row">-->
+<!--		<div class="item-option-select">-->
+<!--			<h6>Choose Color</h6>-->
+<!--			  <select name="color" class="form-control" required>-->
+<!--				<option value="" disabled selected>Selected</option>-->
+<!--				{% for i in single_product.variation_set.colors %}-->
+<!--				<option value="{{ i.variation_value | lower }}">{{ i.variation_value | capfirst }}</option>-->
+<!--				{% endfor %}-->
+<!--			  </select>-->
+<!--		</div>-->
+<!--	</div> &lt;!&ndash; row.// &ndash;&gt;-->
+<!--	<div class="row">-->
+<!--		<div class="item-option-select">-->
+<!--			<h6>Select Size</h6>-->
+<!--			  <select name="color" class="form-control">-->
+<!--				<option value="" disabled selected>Selected</option>-->
+<!--				{% for i in single_product.variation_set.sizes %}-->
+<!--				<option value="{{ i.variation_value | lower }}">{{ i.variation_value | capfirst }}</option>-->
+<!--				{% endfor %}-->
+<!--			  </select>-->
+<!--		</div>-->
+<!--	</div> &lt;!&ndash; row.// &ndash;&gt;-->
+<!--	<hr>-->
 	{% if single_product.stock <= 0 %}
 	  <h5 class="text-danger">Out of stock </h5>
 	  {% else %}
@@ -62,6 +62,7 @@
 	       <a href="{% url 'cart' %}" class="btn  btn-outline-primary"> <span class="text">View cart</span> <i class="fas fa-eye"></i></a>-->
 
 	    <button type="" class="btn  btn-primary"> <span class="text">Add to cart</span> <i class="fas fa-shopping-cart"></i></button>
+
 	    {% endif %}
 
 </article> <!-- product-info-aside .// -->
